@@ -21,12 +21,18 @@ const listedPrice =
 
 /**
  * transform carts into an array of { customer, total }
- */
+ *an array that has customer's names and total
+
 const calculateTotals =
   listings =>
-    carts => {
-      // TODO
-    }
+    carts => ({
+      (carts: cart[], init: cart) => cart
+    })
+*/
+const calculateTotals = function (listings) {
+  (listings, init) =>
+    reduce(listings.price, (x, y) => x + y, init)
+}
 
 module.exports = {
   listing,
